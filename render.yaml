@@ -2,6 +2,12 @@ services:
   - type: web
     name: QRify
     env: python
+    region: oregon
+    plan: free
+    repo: https://github.com/Madhu-Sudhana-Rao/QRify
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     pythonVersion: 3.11.9
+    autoDeployTrigger: commit
+
+version: "1"
